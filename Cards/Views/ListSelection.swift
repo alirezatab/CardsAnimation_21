@@ -1,15 +1,15 @@
 /// Copyright (c) 2025 Kodeco
-/// 
+///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
 /// in the Software without restriction, including without limitation the rights
 /// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 /// copies of the Software, and to permit persons to whom the Software is
 /// furnished to do so, subject to the following conditions:
-/// 
+///
 /// The above copyright notice and this permission notice shall be included in
 /// all copies or substantial portions of the Software.
-/// 
+///
 /// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
 /// distribute, sublicense, create a derivative work, and/or sell copies of the
 /// Software in any work that is designed, intended, or marketed for pedagogical or
@@ -17,7 +17,7 @@
 /// or information technology.  Permission for such use, copying, modification,
 /// merger, publication, distribution, sublicensing, creation of derivative works,
 /// or sale is expressly withheld.
-/// 
+///
 /// This project and source code may use libraries or frameworks that are
 /// released under various Open-Source licenses. Use of those libraries and
 /// frameworks are governed by their own individual licenses.
@@ -32,12 +32,30 @@
 
 import SwiftUI
 
+enum ListState {
+  case list, carousel
+}
+
 struct ListSelection: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  
+  @Binding var listState: ListState
+  
+  var body: some View {
+    /// 1 - You use a `Picker`, passing in the selection property to update.
+    Picker(selection: $listState, label: Text("")) {
+      /// 2 - You assign SFSymbols for each option. When the user chooses an option, the `tag(_:)` modifier will update `listState` with the specified value.
+      Image(systemName: "square.grid.2x2.fill")
+        .tag(ListState.list)
+      Image(systemName: "rectangle.stack.fill")
+        .tag(ListState.carousel)
     }
+    /// 3 - You tell the `Picker` what picker style to use.
+    /// Other picker styles include `menu` and `wheel`, which displays options in a scrollable wheel.
+    .pickerStyle(.segmented)
+    .frame(width: 200)
+  }
 }
 
 #Preview {
-    ListSelection()
+  ListSelection(listState: .constant(.list))
 }

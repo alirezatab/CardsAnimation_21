@@ -52,6 +52,15 @@ struct CardToolbar: ViewModifier {
             dismiss()
           }
         }
+        ToolbarItem(placement: .navigationBarLeading) {
+          let uiImage = UIImage.screenshot(card: card, size: Settings.cardSize)
+          let image = Image(uiImage: uiImage)
+          // Add ShareLink
+          /// Here you use a longer `ShareLink` initializer. In place of text, you share your screen-capture image. You create your own preview image and provide a custom icon.
+          ShareLink(item: image, preview: SharePreview("Card", image: image)) {
+            Image(systemName: "square.and.arrow.up")
+          }
+        }
         ToolbarItem(placement: .bottomBar) {
           BottomToolbar(
             card: $card,

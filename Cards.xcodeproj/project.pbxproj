@@ -44,6 +44,9 @@
 		82FC263B29A46DB80054795C /* CardElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC263A29A46DB80054795C /* CardElement.swift */; };
 		82FC263D29A46DD20054795C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC263C29A46DD20054795C /* Card.swift */; };
 		82FC263F29A46DF40054795C /* CardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC263E29A46DF40054795C /* CardStore.swift */; };
+		C20C220E2D2C8341009E76DB /* AppLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C220D2D2C8341009E76DB /* AppLoadingView.swift */; };
+		C20C22102D2C8397009E76DB /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C220F2D2C8397009E76DB /* SplashScreen.swift */; };
+		C20C22122D2DC68B009E76DB /* ListSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C22112D2DC68B009E76DB /* ListSelection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +89,9 @@
 		82FC263A29A46DB80054795C /* CardElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardElement.swift; sourceTree = "<group>"; };
 		82FC263C29A46DD20054795C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		82FC263E29A46DF40054795C /* CardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStore.swift; sourceTree = "<group>"; };
+		C20C220D2D2C8341009E76DB /* AppLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoadingView.swift; sourceTree = "<group>"; };
+		C20C220F2D2C8397009E76DB /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		C20C22112D2DC68B009E76DB /* ListSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSelection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,8 @@
 			children = (
 				82B36DB229A4972A001DFB09 /* Info.plist */,
 				821BACF529A4334200DF7122 /* CardsApp.swift */,
+				C20C220F2D2C8397009E76DB /* SplashScreen.swift */,
+				C20C220D2D2C8341009E76DB /* AppLoadingView.swift */,
 				821BAD2A29A43DDD00DF7122 /* Views */,
 				82BA5DE829A4583500A8E097 /* Model */,
 				82BA5DED29A45E2700A8E097 /* Config */,
@@ -145,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				821BAD0529A4347600DF7122 /* CardsListView.swift */,
+				C20C22112D2DC68B009E76DB /* ListSelection.swift */,
 				821BAD0729A434FD00DF7122 /* CardThumbnail.swift */,
 				82BA5DE629A457ED00A8E097 /* ResizableView.swift */,
 				821BAD2B29A43DE400DF7122 /* Single Card Views */,
@@ -332,6 +341,7 @@
 				822A9CEC29A47833003EF057 /* CardDetailView.swift in Sources */,
 				82FC263B29A46DB80054795C /* CardElement.swift in Sources */,
 				8269F68929AF21F000BD5E4A /* LayoutView.swift in Sources */,
+				C20C22122D2DC68B009E76DB /* ListSelection.swift in Sources */,
 				8283CE9529A49A0C0002671D /* StickerModal.swift in Sources */,
 				821BAD0829A434FD00DF7122 /* CardThumbnail.swift in Sources */,
 				82BA5DEC29A459D200A8E097 /* Operators.swift in Sources */,
@@ -351,12 +361,14 @@
 				821BAD0E29A4369B00DF7122 /* BottomToolbar.swift in Sources */,
 				82D0410929AF6FC200A0AE7C /* AppFonts.swift in Sources */,
 				82BA5DEA29A4584900A8E097 /* Transform.swift in Sources */,
+				C20C220E2D2C8341009E76DB /* AppLoadingView.swift in Sources */,
 				822A9CEE29A47892003EF057 /* CardElementView.swift in Sources */,
 				82BA5DEF29A45E3D00A8E097 /* Settings.swift in Sources */,
 				82FC263F29A46DF40054795C /* CardStore.swift in Sources */,
 				821BACF629A4334200DF7122 /* CardsApp.swift in Sources */,
 				8294843F29A5AAAF005AC942 /* PhotosModal.swift in Sources */,
 				8294844729A85AA2005AC942 /* Shapes.swift in Sources */,
+				C20C22102D2C8397009E76DB /* SplashScreen.swift in Sources */,
 				82BA5DF229A45EA900A8E097 /* ColorExtensions.swift in Sources */,
 				82EF48E129A85C2A00A7B006 /* SingleCardView.swift in Sources */,
 				8294844329A5AF00005AC942 /* CustomTransfer.swift in Sources */,

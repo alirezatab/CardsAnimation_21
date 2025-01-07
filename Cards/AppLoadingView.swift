@@ -33,11 +33,38 @@
 import SwiftUI
 
 struct AppLoadingView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  
+  @State private var showSplash = true
+  
+  var body: some View {
+    if showSplash {
+      SplashScreen()
+        .ignoresSafeArea()
+      ///Here you set `showSplash` to `false` after a delay and use explicit animation. `showSplash` controls which view shows. You want the splash screen to show for a second or two and then transition to the main view.
+        .onAppear {
+          DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            withAnimation {
+              showSplash = false
+            }
+          }
+        }
+    } else {
+      CardsListView()
+        //.transition(.slide)
+        //.transition(.move(edge: .top))
+        //.transition(.asymmetric(insertion: .slide, removal: .scale))
+        .transition(.scale(scale: 0, anchor: .top)) /// This will scale the new view in from the top.
     }
+  }
 }
 
-#Preview {
+//#Preview {
+//  AppLoadingView()
+//}
+
+struct AppLoadingView_Previews: PreviewProvider {
+  static var previews: some View {
     AppLoadingView()
+      .environmentObject(CardStore(defaultData: true))
+  }
 }

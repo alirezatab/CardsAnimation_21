@@ -38,7 +38,7 @@ struct CardsApp: App {
 
   var body: some Scene {
     WindowGroup {
-      CardsListView()
+      AppLoadingView()
         .environmentObject(store)
         .onAppear {
           print(URL.documentsDirectory)

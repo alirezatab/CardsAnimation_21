@@ -140,3 +140,21 @@ extension UIImage {
     }
   }
 }
+
+// MARK: - Rendering a View to an Image
+extension UIImage {
+  /// 1 - `MainActor` ensures that a method is performed on the main dispatch queue.
+  /// Any time you are dealing with views, you should be on the main thread.
+  /// Note that any method that calls `UIImage.screenshot(card:size:)` must also be marked with `MainActor`, otherwise it will not compile.
+  @MainActor static func screenshot(card: Card, size: CGSize) -> UIImage {
+    /// 2 - Load the card into a view and extract the content. Specifying the size of the content, means that you can scale it to any size preview you want.
+    let cardView = ShareCardView(card: card)
+    let content = cardView.content(size: size)
+    /// 3 - Render the image from the view. `ImageRender<Content>` initializes with a view and draws it to a `Canvas`.
+    /// You can render shapes or text or any other View to an image.
+    let renderer = ImageRenderer(content: content)
+    /// 4 - Extract a `UIImage` from the rendered image, but if there’s an error, use the error image in the asset catalog.
+    let uiImage = renderer.uiImage ?? UIImage.errorImage
+    return uiImage
+  }
+}
