@@ -36,13 +36,21 @@ struct CardThumbnail: View {
   let card: Card
 
   var body: some View {
-    card.backgroundColor
-      .cornerRadius(10)
-      .shadow(
-        color: Color("shadow-color"),
-        radius: 3,
-        x: 0.0,
-        y: 0.0)
+    Group {
+      if let uiImage = UIImage.load(uuidString: card.id.uuidString) {
+        Image(uiImage: uiImage)
+          .resizable()
+          .aspectRatio(contentMode: .fit)
+      } else {
+        card.backgroundColor
+      }
+    }
+    .cornerRadius(10)
+    .shadow(
+      color: Color("shadow-color"),
+      radius: 3,
+      x: 0.0,
+      y: 0.0)
   }
 }
 
